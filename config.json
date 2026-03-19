@@ -3,14 +3,14 @@
   "rss_url": "https://www.clarin.com/rss/rural/",
   "banners": {
     "leaderboard": {
-      "image_url": "https://placehold.co/538x32?text=Publicidad+Leaderboard",
-      "target_url": "http://www.ipcva.com.ar",
+      "image_url": "https://i.imgur.com/o0Ld5qh.jpeg",
+      "target_url": "https://www.ipcva.com.ar",
       "width": 538,
       "height": 32
     },
     "sidebar": {
-      "image_url": "https://placehold.co/538x448?text=Publicidad+Sidebar",
-      "target_url": "http://www.ipcva.com.ar",
+      "image_url": "https://i.imgur.com/BYjP5wq.jpeg",
+      "target_url": "https://www.ipcva.com.ar",
       "width": 538,
       "height": 448
     }
