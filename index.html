@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,43 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        h1, h2, h3 { font-family: 'DM Serif Display', serif; }
-        .leaderboard { max-width: 538px; height: auto; min-height: 32px; overflow: hidden; margin: 0 auto; }
-        .sidebar-ad { max-width: 538px; height: auto; min-height: 100px; overflow: hidden; margin: 0 auto; }
-        img { max-width: 100%; height: auto; }
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .leaderboard {
+            max-width: 538px;
+            height: auto;
+            min-height: 32px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .sidebar-ad {
+            max-width: 538px;
+            height: auto;
+            min-height: 100px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50 text-gray-900 leading-relaxed">
 
     <!-- Top Banner (Leaderboard) -->
@@ -30,30 +59,58 @@
 
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div
+            class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
             <h1 class="text-4xl text-green-800 font-bold tracking-tight mb-2 md:mb-0">
                 InfoAgraria
             </h1>
             <div class="text-sm text-gray-500 font-medium uppercase tracking-widest">
-                Actualizado: 18/03/2026 23:49
+                Actualizado: 19/03/2026 08:00
             </div>
         </div>
     </header>
 
     <main class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            
+
             <!-- News Feed -->
             <div class="lg:col-span-3">
                 <h2 class="text-2xl font-bold mb-6 pb-2 border-b-2 border-green-700 inline-block">Últimas Noticias</h2>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     
-                    <article class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <article
+                        class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                        
+                        <div class="w-full h-48 overflow-hidden">
+                            <a href="https://www.clarin.com/rural/camelina-busca-lugar-agro-argentino_0_5191cq0uoI.html" target="_blank">
+                                <img src="https://www.clarin.com/img/2016/10/27/B14oMKA7e_1200x630.jpg" alt="La camelina busca su lugar en el agro argentino"
+                                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 hover:text-green-800 transition-colors">
+                                <a href="https://www.clarin.com/rural/camelina-busca-lugar-agro-argentino_0_5191cq0uoI.html" target="_blank">La camelina busca su lugar en el agro argentino</a>
+                            </h3>
+                            <div class="text-gray-600 mb-4 text-sm line-clamp-4">
+                                Es un cultivo que suma ventajas productivas y bioenergéticas para aviones.En un panel de Expoagro se describieron las condiciones de manejo y resultados de ensayos.
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
+                                <span>Thu, 19 Mar 2026 02:51:31 +0000</span>
+                                <a href="https://www.clarin.com/rural/camelina-busca-lugar-agro-argentino_0_5191cq0uoI.html" target="_blank"
+                                    class="text-green-700 font-semibold hover:underline">Leer más</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article
+                        class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                         
                         <div class="w-full h-48 overflow-hidden">
                             <a href="https://www.clarin.com/rural/fada-difundio-mensajes-retenciones-carteleria-expoagro_0_NucDgdEcii.html" target="_blank">
-                                <img src="https://www.clarin.com/img/2026/03/18/0so-Q4rzd_1200x630__1.jpg" alt="Fada difundió sus mensajes sobre retenciones en la cartelería de Expoagro" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://www.clarin.com/img/2026/03/18/0so-Q4rzd_1200x630__1.jpg" alt="Fada difundió sus mensajes sobre retenciones en la cartelería de Expoagro"
+                                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
                             </a>
                         </div>
                         
@@ -66,16 +123,19 @@
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
                                 <span>Thu, 19 Mar 2026 01:27:57 +0000</span>
-                                <a href="https://www.clarin.com/rural/fada-difundio-mensajes-retenciones-carteleria-expoagro_0_NucDgdEcii.html" target="_blank" class="text-green-700 font-semibold hover:underline">Leer más</a>
+                                <a href="https://www.clarin.com/rural/fada-difundio-mensajes-retenciones-carteleria-expoagro_0_NucDgdEcii.html" target="_blank"
+                                    class="text-green-700 font-semibold hover:underline">Leer más</a>
                             </div>
                         </div>
                     </article>
                     
-                    <article class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <article
+                        class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                         
                         <div class="w-full h-48 overflow-hidden">
                             <a href="https://www.clarin.com/rural/maquinaria-agricola-advierten-costos-presion-importada-desafio-competir-asia_0_GZTUszUeqH.html" target="_blank">
-                                <img src="https://www.clarin.com/img/2026/03/18/P6-XrjYVe_1200x630__1.jpg" alt="Maquinaria agrícola: advierten por los costos, la presión importada y el desafío de competir con Asia" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://www.clarin.com/img/2026/03/18/P6-XrjYVe_1200x630__1.jpg" alt="Maquinaria agrícola: advierten por los costos, la presión importada y el desafío de competir con Asia"
+                                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
                             </a>
                         </div>
                         
@@ -88,16 +148,19 @@
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
                                 <span>Thu, 19 Mar 2026 00:11:44 +0000</span>
-                                <a href="https://www.clarin.com/rural/maquinaria-agricola-advierten-costos-presion-importada-desafio-competir-asia_0_GZTUszUeqH.html" target="_blank" class="text-green-700 font-semibold hover:underline">Leer más</a>
+                                <a href="https://www.clarin.com/rural/maquinaria-agricola-advierten-costos-presion-importada-desafio-competir-asia_0_GZTUszUeqH.html" target="_blank"
+                                    class="text-green-700 font-semibold hover:underline">Leer más</a>
                             </div>
                         </div>
                     </article>
                     
-                    <article class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <article
+                        class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                         
                         <div class="w-full h-48 overflow-hidden">
                             <a href="https://www.clarin.com/rural/batalla-silenciosa-alimentos_0_sOLa6L7poh.html" target="_blank">
-                                <img src="https://www.clarin.com/img/2026/03/18/HMvWTC2Ys_1200x630__1.jpg" alt="La batalla silenciosa por los alimentos" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://www.clarin.com/img/2026/03/18/HMvWTC2Ys_1200x630__1.jpg" alt="La batalla silenciosa por los alimentos"
+                                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
                             </a>
                         </div>
                         
@@ -110,16 +173,19 @@
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
                                 <span>Wed, 18 Mar 2026 19:28:28 +0000</span>
-                                <a href="https://www.clarin.com/rural/batalla-silenciosa-alimentos_0_sOLa6L7poh.html" target="_blank" class="text-green-700 font-semibold hover:underline">Leer más</a>
+                                <a href="https://www.clarin.com/rural/batalla-silenciosa-alimentos_0_sOLa6L7poh.html" target="_blank"
+                                    class="text-green-700 font-semibold hover:underline">Leer más</a>
                             </div>
                         </div>
                     </article>
                     
-                    <article class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <article
+                        class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                         
                         <div class="w-full h-48 overflow-hidden">
                             <a href="https://www.clarin.com/rural/nuevas-tecnologias-bienestar-manejo-ganadero_0_o67uiBlie2.html" target="_blank">
-                                <img src="https://www.clarin.com/img/2026/03/14/3mN_ly2SV_1200x630__1.jpg" alt="Nuevas tecnologías para el bienestar y manejo ganadero" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://www.clarin.com/img/2026/03/14/3mN_ly2SV_1200x630__1.jpg" alt="Nuevas tecnologías para el bienestar y manejo ganadero"
+                                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
                             </a>
                         </div>
                         
@@ -132,16 +198,19 @@
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
                                 <span>Wed, 18 Mar 2026 18:07:54 +0000</span>
-                                <a href="https://www.clarin.com/rural/nuevas-tecnologias-bienestar-manejo-ganadero_0_o67uiBlie2.html" target="_blank" class="text-green-700 font-semibold hover:underline">Leer más</a>
+                                <a href="https://www.clarin.com/rural/nuevas-tecnologias-bienestar-manejo-ganadero_0_o67uiBlie2.html" target="_blank"
+                                    class="text-green-700 font-semibold hover:underline">Leer más</a>
                             </div>
                         </div>
                     </article>
                     
-                    <article class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <article
+                        class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                         
                         <div class="w-full h-48 overflow-hidden">
                             <a href="https://www.clarin.com/rural/clima-lluvias-intensas-norte-vaivenes-termicos-marcaran-proximas-semanas-agro_0_0hl5idYf2t.html" target="_blank">
-                                <img src="https://www.clarin.com/img/2026/03/18/HNMkHge2M_1200x630__1.jpg" alt="Clima: lluvias intensas en el norte y vaivenes térmicos marcarán las próximas dos semanas en el agro" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://www.clarin.com/img/2026/03/18/HNMkHge2M_1200x630__1.jpg" alt="Clima: lluvias intensas en el norte y vaivenes térmicos marcarán las próximas dos semanas en el agro"
+                                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
                             </a>
                         </div>
                         
@@ -154,16 +223,19 @@
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
                                 <span>Wed, 18 Mar 2026 17:02:41 +0000</span>
-                                <a href="https://www.clarin.com/rural/clima-lluvias-intensas-norte-vaivenes-termicos-marcaran-proximas-semanas-agro_0_0hl5idYf2t.html" target="_blank" class="text-green-700 font-semibold hover:underline">Leer más</a>
+                                <a href="https://www.clarin.com/rural/clima-lluvias-intensas-norte-vaivenes-termicos-marcaran-proximas-semanas-agro_0_0hl5idYf2t.html" target="_blank"
+                                    class="text-green-700 font-semibold hover:underline">Leer más</a>
                             </div>
                         </div>
                     </article>
                     
-                    <article class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <article
+                        class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                         
                         <div class="w-full h-48 overflow-hidden">
                             <a href="https://www.clarin.com/rural/corrientes-meses-incertidumbre-decenas-animales-muertos-hambre-habilitaron-traslado-180-cabezas-ganado-robado_0_NAuD3Jo0tz.html" target="_blank">
-                                <img src="https://www.clarin.com/img/2026/03/18/xY7SX73Ym_1200x630__1.jpg" alt="Corrientes: tras dos meses de incertidumbre y decenas de animales muertos de hambre, habilitaron el traslado de más 180 cabezas de ganado robado" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://www.clarin.com/img/2026/03/18/xY7SX73Ym_1200x630__1.jpg" alt="Corrientes: tras dos meses de incertidumbre y decenas de animales muertos de hambre, habilitaron el traslado de más 180 cabezas de ganado robado"
+                                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
                             </a>
                         </div>
                         
@@ -176,16 +248,19 @@
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
                                 <span>Wed, 18 Mar 2026 16:45:12 +0000</span>
-                                <a href="https://www.clarin.com/rural/corrientes-meses-incertidumbre-decenas-animales-muertos-hambre-habilitaron-traslado-180-cabezas-ganado-robado_0_NAuD3Jo0tz.html" target="_blank" class="text-green-700 font-semibold hover:underline">Leer más</a>
+                                <a href="https://www.clarin.com/rural/corrientes-meses-incertidumbre-decenas-animales-muertos-hambre-habilitaron-traslado-180-cabezas-ganado-robado_0_NAuD3Jo0tz.html" target="_blank"
+                                    class="text-green-700 font-semibold hover:underline">Leer más</a>
                             </div>
                         </div>
                     </article>
                     
-                    <article class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <article
+                        class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                         
                         <div class="w-full h-48 overflow-hidden">
                             <a href="https://www.clarin.com/rural/marchas-meses-cobrar-fabrica-abandonada-desesperante-situacion-atraviesan-trabajadores-lacteos-veronica_0_v4OOv24X3g.html" target="_blank">
-                                <img src="https://www.clarin.com/img/2026/03/18/odRY1MY9M_1200x630__1.jpg" alt="Marchas, tres meses sin cobrar y la fábrica abandonada: la desesperante situación que atraviesan los trabajadores de Lácteos Verónica" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://www.clarin.com/img/2026/03/18/odRY1MY9M_1200x630__1.jpg" alt="Marchas, tres meses sin cobrar y la fábrica abandonada: la desesperante situación que atraviesan los trabajadores de Lácteos Verónica"
+                                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
                             </a>
                         </div>
                         
@@ -198,16 +273,19 @@
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
                                 <span>Wed, 18 Mar 2026 14:36:12 +0000</span>
-                                <a href="https://www.clarin.com/rural/marchas-meses-cobrar-fabrica-abandonada-desesperante-situacion-atraviesan-trabajadores-lacteos-veronica_0_v4OOv24X3g.html" target="_blank" class="text-green-700 font-semibold hover:underline">Leer más</a>
+                                <a href="https://www.clarin.com/rural/marchas-meses-cobrar-fabrica-abandonada-desesperante-situacion-atraviesan-trabajadores-lacteos-veronica_0_v4OOv24X3g.html" target="_blank"
+                                    class="text-green-700 font-semibold hover:underline">Leer más</a>
                             </div>
                         </div>
                     </article>
                     
-                    <article class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <article
+                        class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                         
                         <div class="w-full h-48 overflow-hidden">
                             <a href="https://www.clarin.com/rural/realizo-remate-primer-lote-maiz-cordoba_0_qFfYIxdKfr.html" target="_blank">
-                                <img src="https://www.clarin.com/img/2026/03/18/xVXo5vqHu_1200x630__1.jpg" alt="Se realizó el Remate del Primer Lote de Maíz en Córdoba" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://www.clarin.com/img/2026/03/18/xVXo5vqHu_1200x630__1.jpg" alt="Se realizó el Remate del Primer Lote de Maíz en Córdoba"
+                                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
                             </a>
                         </div>
                         
@@ -220,16 +298,19 @@
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
                                 <span>Tue, 17 Mar 2026 21:45:39 +0000</span>
-                                <a href="https://www.clarin.com/rural/realizo-remate-primer-lote-maiz-cordoba_0_qFfYIxdKfr.html" target="_blank" class="text-green-700 font-semibold hover:underline">Leer más</a>
+                                <a href="https://www.clarin.com/rural/realizo-remate-primer-lote-maiz-cordoba_0_qFfYIxdKfr.html" target="_blank"
+                                    class="text-green-700 font-semibold hover:underline">Leer más</a>
                             </div>
                         </div>
                     </article>
                     
-                    <article class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <article
+                        class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                         
                         <div class="w-full h-48 overflow-hidden">
                             <a href="https://www.clarin.com/rural/crisis-puso-freno-escalada-precio-hacienda_0_HDlhzBh0BQ.html" target="_blank">
-                                <img src="https://www.clarin.com/img/2026/03/17/xYNceb94d_1200x630__1.jpg" alt="La caída en la demanda del mercado interno le puso un freno a la escalada del precio de la hacienda" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://www.clarin.com/img/2026/03/17/xYNceb94d_1200x630__1.jpg" alt="La caída en la demanda del mercado interno le puso un freno a la escalada del precio de la hacienda"
+                                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
                             </a>
                         </div>
                         
@@ -242,29 +323,8 @@
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
                                 <span>Tue, 17 Mar 2026 18:57:46 +0000</span>
-                                <a href="https://www.clarin.com/rural/crisis-puso-freno-escalada-precio-hacienda_0_HDlhzBh0BQ.html" target="_blank" class="text-green-700 font-semibold hover:underline">Leer más</a>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <article class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                        
-                        <div class="w-full h-48 overflow-hidden">
-                            <a href="https://www.clarin.com/rural/renovado-entusiasmo-presento-2-gran-remate-banco-nacion_0_GMlQnltNNX.html" target="_blank">
-                                <img src="https://www.clarin.com/img/2026/03/17/nX2CvMl8a_1200x630__1.jpg" alt="Con renovado entusiasmo, se presentó al 2° Gran Remate Banco Nación" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
-                            </a>
-                        </div>
-                        
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3 hover:text-green-800 transition-colors">
-                                <a href="https://www.clarin.com/rural/renovado-entusiasmo-presento-2-gran-remate-banco-nacion_0_GMlQnltNNX.html" target="_blank">Con renovado entusiasmo, se presentó al 2° Gran Remate Banco Nación</a>
-                            </h3>
-                            <div class="text-gray-600 mb-4 text-sm line-clamp-4">
-                                Durante la megamuestra, se oficializó el lanzamiento de una nueva edición del remate de hacienda con la fuerza de Expoagro bajo el martillo de Colombo y Magliano. Una articulación estratégica que acerca a los productores líneas de créditos específicas para la compra de hacienda.
-                            </div>
-                            <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
-                                <span>Tue, 17 Mar 2026 13:37:17 +0000</span>
-                                <a href="https://www.clarin.com/rural/renovado-entusiasmo-presento-2-gran-remate-banco-nacion_0_GMlQnltNNX.html" target="_blank" class="text-green-700 font-semibold hover:underline">Leer más</a>
+                                <a href="https://www.clarin.com/rural/crisis-puso-freno-escalada-precio-hacienda_0_HDlhzBh0BQ.html" target="_blank"
+                                    class="text-green-700 font-semibold hover:underline">Leer más</a>
                             </div>
                         </div>
                     </article>
@@ -278,7 +338,8 @@
                 <div class="sticky top-24">
                     <div class="sidebar-ad rounded shadow-sm border bg-white overflow-hidden">
                         <a href="https://www.ipcva.com.ar" target="_blank">
-                            <img src="https://i.imgur.com/BYjP5wq.jpeg" alt="Publicidad Sidebar" class="w-full h-auto object-contain">
+                            <img src="https://i.imgur.com/BYjP5wq.jpeg" alt="Publicidad Sidebar"
+                                class="w-full h-auto object-contain">
                         </a>
                     </div>
                     <div class="text-[10px] text-gray-400 text-center mt-1 uppercase">Publicidad</div>
@@ -296,4 +357,5 @@
     </footer>
 
 </body>
+
 </html>
