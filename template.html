@@ -10,58 +10,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'DM Serif Display', serif; }
-        .leaderboard { width: 538px; height: 32px; overflow: hidden; margin: 0 auto; }
-        .sidebar-ad { width: 538px; height: 448px; overflow: hidden; margin: 0 auto; }
-        @media (max-width: 600px) {
-            .leaderboard, .sidebar-ad { width: 100%; height: auto; }
-        }
+        .leaderboard { max-width: 538px; height: auto; min-height: 32px; overflow: hidden; margin: 0 auto; }
+        .sidebar-ad { max-width: 538px; height: auto; min-height: 100px; overflow: hidden; margin: 0 auto; }
+        img { max-width: 100%; height: auto; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 leading-relaxed">
 
     <!-- Top Banner (Leaderboard) -->
-    <div class="bg-white border-b py-2">
+    <div class="bg-white border-b py-2 px-4">
         <div class="leaderboard">
             <a href="{{ banners.leaderboard.target_url }}" target="_blank">
-                <img src="{{ banners.leaderboard.image_url }}" alt="Publicidad" class="w-full h-full object-cover">
+                <img src="{{ banners.leaderboard.image_url }}" alt="Publicidad" class="w-full h-auto object-contain">
             </a>
         </div>
     </div>
 
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
-            <h1 class="text-4xl text-green-800 font-bold tracking-tight">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <h1 class="text-4xl text-green-800 font-bold tracking-tight mb-2 md:mb-0">
                 {{ site_name }}
             </h1>
-            <div class="text-sm text-gray-500 font-medium uppercase tracking-widest hidden md:block">
+            <div class="text-sm text-gray-500 font-medium uppercase tracking-widest">
                 Actualizado: {{ update_time }}
             </div>
         </div>
     </header>
 
     <main class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             
             <!-- News Feed -->
-            <div class="lg:col-span-2">
+            <div class="lg:col-span-3">
                 <h2 class="text-2xl font-bold mb-6 pb-2 border-b-2 border-green-700 inline-block">Últimas Noticias</h2>
                 
-                <div class="space-y-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {% for item in items %}
-                    <article class="flex flex-col md:flex-row gap-6 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                        <div class="md:w-2/3">
-                            <h3 class="text-2xl font-bold mb-3 hover:text-green-800 transition-colors">
+                    <article class="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                        {% if item.image %}
+                        <div class="w-full h-48 overflow-hidden">
+                            <a href="{{ item.link }}" target="_blank">
+                                <img src="{{ item.image }}" alt="{{ item.title }}" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+                        {% endif %}
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 hover:text-green-800 transition-colors">
                                 <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
                             </h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">
+                            <div class="text-gray-600 mb-4 text-sm line-clamp-4">
                                 {{ item.summary | striptags }}
-                            </p>
-                            <div class="flex items-center text-sm text-gray-400">
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t">
                                 <span>{{ item.published }}</span>
-                                <span class="mx-2">&bull;</span>
                                 <a href="{{ item.link }}" target="_blank" class="text-green-700 font-semibold hover:underline">Leer más</a>
                             </div>
                         </div>
@@ -72,18 +76,11 @@
 
             <!-- Sidebar -->
             <aside class="space-y-8">
-                <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-green-800">
-                    <h3 class="text-xl font-bold mb-4 italic">Sobre Nosotros</h3>
-                    <p class="text-gray-600 text-sm">
-                        Agregador automático de noticias agrícolas para mantenerte informado sobre el campo argentino. Actualizado cada 6 horas.
-                    </p>
-                </div>
-
                 <!-- Sidebar Banner -->
                 <div class="sticky top-24">
-                    <div class="sidebar-ad rounded shadow-sm border bg-white">
+                    <div class="sidebar-ad rounded shadow-sm border bg-white overflow-hidden">
                         <a href="{{ banners.sidebar.target_url }}" target="_blank">
-                            <img src="{{ banners.sidebar.image_url }}" alt="Publicidad Sidebar" class="w-full h-full object-cover">
+                            <img src="{{ banners.sidebar.image_url }}" alt="Publicidad Sidebar" class="w-full h-auto object-contain">
                         </a>
                     </div>
                     <div class="text-[10px] text-gray-400 text-center mt-1 uppercase">Publicidad</div>

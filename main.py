@@ -25,12 +25,22 @@ def fetch_news(rss_url):
         
     items = []
     for entry in feed.entries:
-        # Basic cleanup and parsing
+        # Extract image from enclosure if available
+        image_url = ''
+        if 'enclosures' in entry and len(entry.enclosures) > 0:
+            image_url = entry.enclosures[0].get('url', '')
+        elif 'links' in entry:
+            for link in entry.links:
+                if link.get('rel') == 'enclosure' or 'image' in link.get('type', ''):
+                    image_url = link.get('href', '')
+                    break
+
         items.append({
             'title': entry.get('title', 'Sin título'),
             'link': entry.get('link', '#'),
             'summary': entry.get('description', entry.get('summary', '')),
-            'published': entry.get('published', '')
+            'published': entry.get('published', ''),
+            'image': image_url
         })
     return items
 
