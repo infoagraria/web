@@ -12,17 +12,24 @@ def load_config():
     with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def fetch_news(rss_url):
+def ensure_https(url):
+    """Ensures that the URL uses HTTPS instead of HTTP."""
+    if url and url.startswith('http://'):
+        return url.replace('http://', 'https://', 1)
+    return url
+
+def fetch_news_from_feed(rss_url):
+    """Fetches news from a single RSS feed. Returns a list of items."""
     print(f"Fetching news from {rss_url}...")
     feed = feedparser.parse(rss_url)
-    
+
     if feed.bozo:
-        print("Warning: RSS feed parsing had issues.")
-    
-    # If no entries, it might be an error or empty feed
+        print(f"  Warning: RSS feed parsing had issues for {rss_url}.")
+
     if not feed.entries:
-        raise Exception("No entries found in the RSS feed.")
-        
+        print(f"  Warning: No entries found in {rss_url}. Skipping.")
+        return []
+
     items = []
     for entry in feed.entries:
         # Extract image from enclosure if available
@@ -37,17 +44,42 @@ def fetch_news(rss_url):
 
         items.append({
             'title': entry.get('title', 'Sin título'),
-            'link': entry.get('link', '#'),
+            'link': ensure_https(entry.get('link', '#')),
             'summary': entry.get('description', entry.get('summary', '')),
             'published': entry.get('published', ''),
-            'image': image_url
+            'published_parsed': entry.get('published_parsed'),  # usado para ordenar
+            'image': ensure_https(image_url)
         })
     return items
+
+def fetch_all_news(config):
+    """Reads all RSS feeds from config, combines and sorts articles by date."""
+    # Soporte para lista de feeds o feed único (compatibilidad hacia atrás)
+    rss_urls = config.get('rss_urls', [config.get('rss_url')])
+
+    all_items = []
+    for url in rss_urls:
+        try:
+            all_items.extend(fetch_news_from_feed(url))
+        except Exception as e:
+            print(f"  ERROR fetching {url}: {e}. Skipping.")
+
+    if not all_items:
+        raise Exception("No se encontraron artículos en ningún feed RSS configurado.")
+
+    # Ordenar por fecha de publicación, más reciente primero
+    all_items.sort(
+        key=lambda x: x.get('published_parsed') or (0,) * 9,
+        reverse=True
+    )
+
+    print(f"Total articles fetched across all feeds: {len(all_items)}")
+    return all_items
 
 def generate_site():
     try:
         config = load_config()
-        items = fetch_news(config['rss_url'])
+        items = fetch_all_news(config)
         
         # Setup Jinja2
         env = Environment(loader=FileSystemLoader('.'))
@@ -57,7 +89,7 @@ def generate_site():
         update_time = datetime.now().strftime('%d/%m/%Y %H:%M')
         html_output = template.render(
             site_name=config.get('site_name', 'InfoAgraria'),
-            items=items[:20],  # Limit to 20 news items
+            items=items[:40],  # Limit to 40 news items across all feeds
             banners=config.get('banners', {}),
             update_time=update_time
         )

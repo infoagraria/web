@@ -2,14 +2,14 @@ name: Update News Feed
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # Cada 6 horas
-  workflow_dispatch: # Permite dispararlo manual
+    - cron: '0 */6 * * *' # Every 6 hours
+  workflow_dispatch: # Allows manual trigger
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write # Needed to push changes
 
     steps:
     - name: Checkout repository

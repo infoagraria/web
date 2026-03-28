@@ -1,0 +1,12 @@
+# Python environments y caches
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Entornos virtuales
+venv/
+env/
+
+# Archivos de planificacion privados
+product.md

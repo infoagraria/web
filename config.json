@@ -1,6 +1,11 @@
 {
   "site_name": "InfoAgraria",
-  "rss_url": "https://www.clarin.com/rss/rural/",
+  "rss_urls": [
+    "https://www.clarin.com/rss/rural/",
+    "https://www.lanacion.com.ar/arc/outboundfeeds/rss/categoria/campo/",
+    "https://bichosdecampo.com/feed/",
+    "https://infocampo.com.ar/feed/"
+  ],
   "banners": {
     "leaderboard": {
       "image_url": "https://i.imgur.com/o0Ld5qh.jpeg",
