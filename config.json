@@ -4,7 +4,13 @@
     "https://www.clarin.com/rss/rural/",
     "https://www.lanacion.com.ar/arc/outboundfeeds/rss/categoria/campo/",
     "https://bichosdecampo.com/feed/",
-    "https://infocampo.com.ar/feed/"
+    "https://infocampo.com.ar/feed/",
+    "https://todoagro.com.ar/feed/",
+    "https://www.defrentealcampo.com.ar/feed/",
+    "https://www.agritotal.com/feed/",
+    "https://valorsoja.com/feed/",
+    "https://horizonteadigital.com/feed/",
+    "https://www.elcampohoy.com/feed/"
   ],
   "banners": {
     "leaderboard": {
