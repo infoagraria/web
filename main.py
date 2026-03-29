@@ -7,6 +7,7 @@ from jinja2 import Environment, FileSystemLoader
 CONFIG_FILE = 'config.json'
 TEMPLATE_FILE = 'template.html'
 OUTPUT_FILE = 'index.html'
+SITEMAP_FILE = 'sitemap.xml'
 
 def load_config():
     with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
@@ -76,6 +77,24 @@ def fetch_all_news(config):
     print(f"Total articles fetched across all feeds: {len(all_items)}")
     return all_items
 
+def generate_sitemap():
+    """Generates a basic sitemap.xml for the project."""
+    site_url = "https://infoagraria.com.ar"
+    now = datetime.now().strftime('%Y-%m-%d')
+    sitemap_content = f'<?xml version="1.0" encoding="UTF-8"?>\n'
+    sitemap_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    sitemap_content += '  <url>\n'
+    sitemap_content += f'    <loc>{site_url}/</loc>\n'
+    sitemap_content += f'    <lastmod>{now}</lastmod>\n'
+    sitemap_content += '    <changefreq>hourly</changefreq>\n'
+    sitemap_content += '    <priority>1.0</priority>\n'
+    sitemap_content += '  </url>\n'
+    sitemap_content += '</urlset>'
+    
+    with open(SITEMAP_FILE, 'w', encoding='utf-8') as f:
+        f.write(sitemap_content)
+    print(f"Successfully generated {SITEMAP_FILE}")
+
 def generate_site():
     try:
         config = load_config()
@@ -98,6 +117,8 @@ def generate_site():
         # Since we are on GitHub Actions, a simple write is fine because we'll check status
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             f.write(html_output)
+            
+        generate_sitemap()
             
         print(f"Successfully generated {OUTPUT_FILE} with {len(items)} items at {update_time}")
         
